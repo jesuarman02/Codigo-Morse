@@ -6,7 +6,7 @@ const codigoMorse = {
     'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 
     'Z': '--..', '0': '-----', '1': '.----', '2': '..---', 
     '3': '...--', '4': '....-', '5': '.....', '6': '-....', 
-    '7': '--...', '8': '---..', '9': '----.', ' ': '/'
+    '7': '--...', '8': '---..', '9': '----.', ' ': ' '  // Cambio: uso de espacio simple en lugar de '/'
 };
 
 const textoMorse = (text) => {
@@ -15,7 +15,11 @@ const textoMorse = (text) => {
 
 const textoMorse1 = (morse) => {
     const morseInverse = Object.fromEntries(Object.entries(codigoMorse).map(([key, value]) => [value, key]));
-    return morse.split(' ').map(code => morseInverse[code] || '').join('');
+    
+    // Cambio: manejo de espacios triples para separar palabras
+    return morse.split('   ').map(
+        word => word.split(' ').map(code => morseInverse[code] || '').join('')
+    ).join(' ');
 };
 
 const validacion = (text) => {
@@ -43,6 +47,8 @@ document.getElementById('convertirMorse').addEventListener('click', () => {
         Swal.fire('Error', 'Por favor, ingresa código Morse.', 'error');
         return;
     }
+    
+    // Cambio: ya que eliminamos el '/', ahora se maneja usando espacios triples
     const resultado = textoMorse1(morse);
     document.getElementById('textoResultado').value = resultado;
 });
