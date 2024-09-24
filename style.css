@@ -1,0 +1,81 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+h1 {
+    position: absolute;
+    top: 2%;
+    left: 21%;
+    font-size: 2.5em; 
+    color: #ffcc00; /* Color dorado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    font-weight: bold; 
+}
+
+h2, h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.custom-textarea {
+    resize: none;
+    border: 2px solid #ffcc00; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    padding: 10px; 
+    background-color: #f7f7f7;
+    font-size: 1.5em;
+    font-weight: bold; 
+    color: #333; 
+    width: 100%;
+}
+
+.custom-btn {
+    background-color: #ff6600; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+    transition: background-color 0.3s ease; 
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: #cc5200; 
+}
+
+.mt-2 {
+    margin-top: 15px;
+}
+
+.mt-3 {
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+        left: 10%; 
+    }
+    h2, h3 {
+        font-size: 1.5em;
+    }
+    .custom-btn {
+        font-size: 1em;
+    }
+}
